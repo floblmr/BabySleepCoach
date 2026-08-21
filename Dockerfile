@@ -15,7 +15,6 @@ RUN apt-get update && apt-get install -y \
     python3-setuptools \
     libgl1 \
     libglib2.0-0 \
-    && npm install -g serve \
     && rm -rf /var/lib/apt/lists/*
 COPY ./requirements.txt .
 RUN pip3 install -r requirements.txt
