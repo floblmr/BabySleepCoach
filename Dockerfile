@@ -22,4 +22,4 @@ RUN pip3 install -r requirements.txt
 COPY . .
 COPY --from=frontend-builder /usr/app/babysleepcoach/webapp/build ./webapp/build
 EXPOSE 80 3000 8001
-CMD ["sh", "-c", "serve -s webapp/build -p 3000 & python3 main.py"]
+CMD ["sh", "-c", "python3 -m http.server 3000 --directory webapp/build & python3 main.py"]
